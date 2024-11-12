@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{> head}}
+</head>
+<body class="bg-dark text-light">
+    <section>
+        {{> nav}}
+    </section>
+
+    <section class="container text-center py-5">
+        <h1>Club Deportivo</h1>
+    </section>
+
+    {{!-- form insert --}}
+    <section class="container py-4">
+        <form action="/deportes/update" method="post">
+            <div class="mb-3">
+                <label for="id" class="form-label">Ingresa el Id</label>
+                <input type="text" class="form-control" id="id" name="id" value="{{respuesta.datos.id}}" readonly>
+            </div>
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Ingresa el nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="{{respuesta.datos.nombre}}" required>
+            </div>
+            <div class="mb-3">
+                <label for="precio" class="form-label">Ingresa el precio</label>
+                <input type="text" class="form-control" id="precio" name="precio" value="{{respuesta.datos.precio}}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
+        <div>
+            {{respuesta.msg}}
+        </div>
+    </section>
+
+</body>
+</html>
